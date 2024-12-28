@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"bet.astral.stream.quilt","l":"Stream"},{"p":"bet.astral.stream.quilt","l":"StreamServer"}];updateSearchResults();

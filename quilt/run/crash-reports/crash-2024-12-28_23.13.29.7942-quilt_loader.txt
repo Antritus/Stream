@@ -1,0 +1,35 @@
+---- Crashed! ----
+Date/Time: 2024/12/28 23:13:29.7952 [+0200]
+Quilt Loader Version: 0.28.0-beta.3
+
+-- Crash --
+
+java.lang.IllegalStateException: Unable to convert 'java.version' (23) into a version number!
+	at org.quiltmc.loader.impl.util.JavaVersionUtil.getJavaVersion(JavaVersionUtil.java:43)
+	at org.quiltmc.loader.impl.filesystem.QuiltZipFileSystem.setupMultiReleaseJar(QuiltZipFileSystem.java:159)
+	at org.quiltmc.loader.impl.filesystem.QuiltZipFileSystem.<init>(QuiltZipFileSystem.java:141)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassLoader.addPath(KnotClassLoader.java:293)
+	at org.quiltmc.loader.impl.launch.knot.Knot.addToClassPath(Knot.java:294)
+	at org.quiltmc.loader.impl.launch.knot.Knot.addToClassPath(Knot.java:284)
+	at dev.crmodders.cosmicquilt.loader.CosmicGameProvider.unlockClassPath(CosmicGameProvider.java:422)
+	at org.quiltmc.loader.impl.launch.knot.Knot.init(Knot.java:158)
+	at dev.crmodders.cosmicquilt.loader.knot.Knot.launch(Knot.java:17)
+	at dev.crmodders.cosmicquilt.loader.knot.KnotClient.main(KnotClient.java:7)
+
+
+-- Mods --
+
+| Index | Mod                      | ID           | Version             | Type    | File Hash (SHA-1)                        | File(s)                                                                                                                                              |
+|------:|--------------------------|--------------|---------------------|---------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     5 | Cosmic Quilt             | cosmicquilt  | 2.3.2               | Builtin | e69d41d1960495432dbe58a3a2989d9d9d8b886b | <user>\.gradle\caches\8.10\transforms\fd2b39db0ee95c275de80995a5367ecb\transformed\widened-cosmic-quilt-2.3.2.jar                                    |
+|     3 | Cosmic Reach             | cosmicreach  | 0.3.12              | Builtin | 7445220b10e89fc3f6b0b0c3f5947e2e30de773e | <user>\.gradle\caches\8.10\transforms\4ca58a82e61769f6045588c85e344777\transformed\widened-cosmicreach-0.3.12-pre-alpha.jar                          |
+|     4 | MixinExtras              | mixinextras  | 0.4.1               | Fabric  | 2682067310909f1774c61ec1956a5ce9bc5a6a8f | <user>\.gradle\caches\8.10\transforms\70f0afddb546837c73007c0f9eba976d\transformed\widened-mixinextras-fabric-0.4.1.jar                              |
+|     2 | OpenJDK 64-Bit Server VM | java         | 23                  | Builtin |                                          | <user>\.jdks\openjdk-23                                                                                                                              |
+|     1 | Quilt Loader             | quilt_loader | 0.28.0-beta.3+local | Quilt   | caf468fbf045bd41dd785650ed695bb1d783380  | <user>\.gradle\caches\8.10\transforms\8073452ae45115d32ebdfcbcd862f58c\transformed\widened-quilt-loader-e8dead4f23d220c800fb6170f546b57c3d527fe1.jar |
+|     0 | Stream                   | stream       | 1.0.0               | Quilt   |                                          | <user>\IdeaProjects\CosmicReach\ModMixer\quilt\build\resources\main                                                                                  |
+|------:|--------------------------|--------------|---------------------|---------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+Mod Table Version: 2
+Plugin Types: {quilted_fabric_loader=[Fabric], quilt_loader=[Quilt, Builtin]}
+
+
+---- end of report ----

@@ -1,0 +1,63 @@
+---- Crashed! ----
+Date/Time: 2024/12/28 23:24:46.6515 [+0200]
+Quilt Loader Version: 0.26.4
+
+-- Crash --
+
+org.quiltmc.loader.impl.FormattedException: java.lang.RuntimeException: Mixin transformation of finalforeach.cosmicreach.lwjgl3.CrashScreen failed
+	at dev.crmodders.cosmicquilt.loader.CosmicGameProvider.launch(CosmicGameProvider.java:444)
+	at dev.crmodders.cosmicquilt.loader.knot.Knot.launch(Knot.java:23)
+	at dev.crmodders.cosmicquilt.loader.knot.KnotClient.main(KnotClient.java:7)
+Caused by: java.lang.RuntimeException: Mixin transformation of finalforeach.cosmicreach.lwjgl3.CrashScreen failed
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:504)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:302)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.loadClassOnly(KnotClassDelegate.java:190)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:176)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:239)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at finalforeach.cosmicreach.lwjgl3.Lwjgl3Launcher.main(Lwjgl3Launcher.java:96)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at dev.crmodders.cosmicquilt.loader.CosmicGameProvider.launch(CosmicGameProvider.java:442)
+	... 2 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:499)
+	... 11 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.MixinPreProcessorException: Attach error for #cosmicquilt:cosmicquilt.mixins.json:override.CrashScreenMixin from mod cosmicquilt during activity: [Transform -> Method apple(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lcom/badlogic/gdx/utils/OrderedMap;)V -> INVOKEDYNAMIC -> makeConcatWithConstants(Ljava/lang/String;)Ljava/lang/String; -> java/lang/invoke/StringConcatFactory::makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:313)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.createContextFor(MixinPreProcessorStandard.java:277)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.createContextFor(MixinInfo.java:1292)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:203)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363)
+	... 14 more
+Caused by: java.lang.RuntimeException: java.lang.ClassNotFoundException: java.lang.invoke.StringConcatFactory
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transformMemberReference(MixinPreProcessorStandard.java:791)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transformInvokeDynamic(MixinPreProcessorStandard.java:760)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transform(MixinPreProcessorStandard.java:747)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:307)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: java.lang.invoke.StringConcatFactory
+	... 24 more
+
+
+-- Mods --
+
+| Index | Mod                      | ID           | Version                                  | Type    | File Hash (SHA-1)                        | File(s)                                                                                                                                              |
+|------:|--------------------------|--------------|------------------------------------------|---------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     5 | Cosmic Quilt             | cosmicquilt  | b6943d56e32a9488582fa51f6cc77a948a180d88 | Builtin | ca7b0097e73f719d3452a72ce5837553e1ce28a7 | <user>\.gradle\caches\8.10\transforms\d087ccf232ee251ab4cb705ec4df697d\transformed\widened-cosmic-quilt-b6943d56e32a9488582fa51f6cc77a948a180d88.jar |
+|     3 | Cosmic Reach             | cosmicreach  | 0.3.12                                   | Builtin | 7445220b10e89fc3f6b0b0c3f5947e2e30de773e | <user>\.gradle\caches\8.10\transforms\4ca58a82e61769f6045588c85e344777\transformed\widened-cosmicreach-0.3.12-pre-alpha.jar                          |
+|     4 | MixinExtras              | mixinextras  | 0.4.1                                    | Fabric  | 2682067310909f1774c61ec1956a5ce9bc5a6a8f | <user>\.gradle\caches\8.10\transforms\70f0afddb546837c73007c0f9eba976d\transformed\widened-mixinextras-fabric-0.4.1.jar                              |
+|     2 | OpenJDK 64-Bit Server VM | java         | 23                                       | Builtin |                                          | <user>\.jdks\openjdk-23                                                                                                                              |
+|     1 | Quilt Loader             | quilt_loader | 0.26.4+local                             | Quilt   | 09b1a5c578b547089414c7a8de37a48c568dafaa | <user>\.gradle\caches\8.10\transforms\3761260e85092c851694614ff2fca043\transformed\widened-quilt-loader-34db2e1e.jar                                 |
+|     0 | Stream                   | stream       | 1.0.0                                    | Quilt   |                                          | <user>\IdeaProjects\CosmicReach\ModMixer\quilt\build\resources\main                                                                                  |
+|------:|--------------------------|--------------|------------------------------------------|---------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+Mod Table Version: 2
+Plugin Types: {quilted_fabric_loader=[Fabric], quilt_loader=[Quilt, Builtin]}
+
+
+---- end of report ----

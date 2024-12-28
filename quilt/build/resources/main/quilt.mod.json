@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+
+  "quilt_loader": {
+    "group": "bet.astral",
+    "id": "stream",
+    "version": "1.0.0",
+
+    "intermediate_mappings":"net.fabricmc:intermediary",
+
+    "metadata": {
+      "name": "Stream",
+      "description": "API system to provide simpler implementation of permissions, style and economy in mods/plugins",
+      "contributors": {
+        "Antritus": "Developer"
+      },
+
+
+      "contact": {
+        "homepage": "https://github.com/Antritus/Stream",
+        "issues": "https://github.com/Antritus/Stream/issues",
+        "sources": "https://github.com/Antritus/Stream"
+      },
+
+      "icon": "assets/stream/icon.png"
+    },
+
+    "entrypoints": {
+      "init": "bet.astral.stream.quilt.Stream"
+    },
+
+    "depends": [
+      {
+        "id": "cosmicquilt",
+        "versions": ">=b6943d56e32a9488582fa51f6cc77a948a180d88"
+      },
+      {
+        "id": "cosmicreach",
+        "versions": ">=0.3.12"
+      }
+    ]
+  },
+
+  "access_widener": "stream.accesswidener",
+  "mixin": "stream.mixins.json"
+}

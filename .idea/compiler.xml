@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="17">
+      <module name="ModMixer" target="23" />
+      <module name="ModMixer.main" target="23" />
+      <module name="ModMixer.puzzle" target="23" />
+      <module name="ModMixer.puzzle.client" target="23" />
+      <module name="ModMixer.puzzle.main" target="23" />
+      <module name="ModMixer.puzzle.test" target="23" />
+      <module name="ModMixer.test" target="23" />
+      <module name="stream.puzzle" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.client.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quilt/stream.quilt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/quilt/stream.quilt.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quilt/stream.quilt.test.iml" filepath="$PROJECT_DIR$/.idea/modules/quilt/stream.quilt.test.iml" />
+    </modules>
+  </component>
+</project>

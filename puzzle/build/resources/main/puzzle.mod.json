@@ -1,0 +1,30 @@
+{
+  "formatVersion": 1,
+  "id": "stream",
+  "version": "1.0.0",
+  "name": "Stream",
+  "description": "API system to provide simpler implementation of permissions, style and economy in mods/plugins",
+  "authors": [
+    "Antritus"
+  ],
+  "meta": {
+    "icon": "stream:icons/icon.png"
+  },
+  "entrypoints": {
+    "client_init": [],
+    "init": [
+      "bet.astral.stream.puzzle.Stream"
+    ],
+    "preInit": [
+      "bet.astral.stream.puzzle.StreamPreInit"
+    ]
+  },
+  "mixins": [
+    "stream.mixins.json"
+  ],
+  "depends": {
+    "cosmic-reach": ">=0.3.12",
+    "puzzle-loader": ">=2.1.15"
+  },
+  "accessManipulator": "stream.manipulator"
+}
