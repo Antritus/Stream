@@ -28,3 +28,7 @@ replay_pid*
 /puzzle/.gradle/
 /puzzle/build/
 /.gradle
+.gradle/8.10/checksums/checksums.lock
+/.gradle
+/.gradle/8.10
+/.gradle/8.10/executionHistory
