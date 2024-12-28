@@ -1,9 +1,10 @@
 plugins {
     id 'java'
     id "io.github.pacifistmc.forgix" version "1.2.9"
-    id "cosmicloom" apply(false)
-    id "jigsaw" apply(false)
-    id "com.github.johnrengelman.shadow" apply(false)
+    id "cosmicloom" apply false
+    id "jigsaw" apply false
+    id "com.github.johnrengelman.shadow" apply false
+    id "maven-publish"
 }
 
 java {
@@ -29,6 +30,7 @@ forgix {
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: "maven-publish"
 
     repositories {
         maven {
@@ -37,11 +39,17 @@ subprojects {
         }
     }
 
-    processResources {
-        // Locations of where to inject the properties
-        def resourceTargets = [ 'puzzle.mod.json', 'quilt.mod.json', '*.mixins.json' ]
+    java {
+        withSourcesJar()
+        withJavadocJar()
 
-        // Left item is the name in the target, right is the varuable name
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    }
+
+    processResources {
+        def resourceTargets = ['puzzle.mod.json', 'quilt.mod.json', '*.mixins.json']
         def replaceProperties = [
                 "mod_version": version,
                 "group": project.group,
@@ -68,33 +76,51 @@ subprojects {
             expand replaceProperties
         }
     }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = project.group
+                artifactId = project.name
+                version = project.version
+                from components.java
+            }
+        }
+    }
 }
 
 tasks.register("buildAll") {
     group = "ModMixer"
-
     dependsOn(rootProject.tasks.named("build"))
-    rootProject.project(":quilt").tasks.matching { it.name == "build" }.all { dependsOn(this) }
-    rootProject.project(":puzzle").tasks.matching { it.name == "buildMergedBundleJar" }.all { dependsOn(this) }
+    rootProject.project(":quilt").tasks.matching { it.name == "build" }.all { dependsOn(it) }
+    rootProject.project(":puzzle").tasks.matching { it.name == "buildMergedBundleJar" }.all { dependsOn(it) }
     finalizedBy(rootProject.tasks.named("mergeJars"))
 }
 
 tasks.register('cleanAll') {
     group = "ModMixer"
-
     dependsOn rootProject.project(':').tasks.clean
     dependsOn rootProject.project(':quilt').tasks.clean
     dependsOn rootProject.project(':puzzle').tasks.clean
     dependsOn rootProject.tasks.clean
 }
 
-
 java {
     withSourcesJar()
-    withJavadocJar() // If docs are included with the project, this line can be un-commented
+    withJavadocJar()
 
-    // Sets the Java version
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.name
+            version = project.version
+            from components.java
+        }
+    }
 }

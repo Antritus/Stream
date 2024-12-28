@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/bet.astral.stream.puzzle.client.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/bet.astral.stream.puzzle.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/bet.astral.stream.puzzle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/bet.astral.stream.puzzle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/bet.astral.stream.puzzle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/bet.astral.stream.puzzle.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quilt/bet.astral.stream.quilt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/quilt/bet.astral.stream.quilt.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quilt/bet.astral.stream.quilt.test.iml" filepath="$PROJECT_DIR$/.idea/modules/quilt/bet.astral.stream.quilt.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.client.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/puzzle/stream.puzzle.test.iml" />
