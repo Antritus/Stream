@@ -2,14 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="17">
-      <module name="ModMixer" target="23" />
-      <module name="ModMixer.main" target="23" />
-      <module name="ModMixer.puzzle" target="23" />
-      <module name="ModMixer.puzzle.client" target="23" />
-      <module name="ModMixer.puzzle.main" target="23" />
-      <module name="ModMixer.puzzle.test" target="23" />
-      <module name="ModMixer.test" target="23" />
-      <module name="stream.puzzle" target="23" />
+      <module name="ModMixer" target="17" />
+      <module name="ModMixer.main" target="17" />
+      <module name="ModMixer.puzzle" target="17" />
+      <module name="ModMixer.puzzle.client" target="17" />
+      <module name="ModMixer.puzzle.main" target="17" />
+      <module name="ModMixer.puzzle.test" target="17" />
+      <module name="ModMixer.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

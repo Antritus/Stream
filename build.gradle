@@ -74,7 +74,7 @@ tasks.register("buildAll") {
     group = "ModMixer"
 
     dependsOn(rootProject.tasks.named("build"))
-    rootProject.project(":quilt").tasks.matching { it.name == "buildMergedBundleJar" }.all { dependsOn(this) }
+    rootProject.project(":quilt").tasks.matching { it.name == "build" }.all { dependsOn(this) }
     rootProject.project(":puzzle").tasks.matching { it.name == "buildMergedBundleJar" }.all { dependsOn(this) }
     finalizedBy(rootProject.tasks.named("mergeJars"))
 }
@@ -86,4 +86,15 @@ tasks.register('cleanAll') {
     dependsOn rootProject.project(':quilt').tasks.clean
     dependsOn rootProject.project(':puzzle').tasks.clean
     dependsOn rootProject.tasks.clean
+}
+
+
+java {
+    withSourcesJar()
+    withJavadocJar() // If docs are included with the project, this line can be un-commented
+
+    // Sets the Java version
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
