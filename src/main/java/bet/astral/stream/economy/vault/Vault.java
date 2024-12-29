@@ -2,6 +2,7 @@ package bet.astral.stream.economy.vault;
 
 import bet.astral.stream.economy.Economy;
 import bet.astral.stream.economy.Response;
+import bet.astral.text.api.component.Component;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -98,24 +99,61 @@ public abstract class Vault {
      * @param amount amount
      * @return response
      */
-    public abstract Response subtract(double amount);
+    public Response subtract(double amount) {
+        return subtract(amount, Economy.UNKNOWN_REASON);
+    }
 
+    /**
+     * Subtracts given amount from the vault's balance
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    public abstract Response subtract(double amount, Component reason);
     /**
      * Adds given amount to the vault's balance
      * @param amount amount
      * @return response
      */
-    public abstract Response add(double amount);
+    public Response add(double amount) {
+        return add(amount, Economy.UNKNOWN_REASON);
+    }
+    /**
+     * Adds given amount to the vault's balance
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    public abstract Response add(double amount, Component reason);
+
     /**
      * Sets the vault's balance to given amount
      * @param amount amount
      * @return response
      */
-    public abstract Response set(double amount);
+    public Response set(double amount) {
+        return set(amount, Economy.UNKNOWN_REASON);
+    }
+    /**
+     * Sets the vault's balance to given amount
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    public abstract Response set(double amount, Component reason);
 
     /**
      * Resets the vault's balance to 0
      * @return response
      */
-    public abstract Response reset();
+    public Response reset() {
+        return reset(Economy.UNKNOWN_REASON);
+    }
+    /**
+     * Resets the vault's balance to 0
+     * @param reason reason for transaction
+     * @return response
+     */
+    public abstract Response reset(Component reason);
+
 }

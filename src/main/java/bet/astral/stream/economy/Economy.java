@@ -14,6 +14,8 @@ import java.util.concurrent.CompletableFuture;
  * @since 1.0.0
  */
 public abstract class Economy implements EconomyWrapperPlayer {
+    public static final Component UNKNOWN_REASON = Component.text("No reason provided");
+
     @Override
     public final Economy wrapper() {
         return this;
@@ -51,7 +53,18 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response setBalance(String playerId, double amount);
+    public Response setBalance(String playerId, double amount) {
+        return setBalance(playerId, amount, UNKNOWN_REASON);
+    }
+
+    /**
+     * Sets the balance of the given player
+     * @param playerId player
+     * @param amount new balance
+     * @param reason reason for this transaction
+     * @return response
+     */
+    public abstract Response setBalance(String playerId, double amount, Component reason);
 
     /**
      * Adds to the balance of the given player
@@ -60,7 +73,19 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response addBalance(String playerId, double amount);
+    public Response addBalance(String playerId, double amount) {
+        return addBalance(playerId, amount, UNKNOWN_REASON);
+    }
+
+    /**
+     * Adds to the balance of the given player
+     * @param playerId player
+     * @param amount amount
+     * @param reason reason for this transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response addBalance(String playerId, double amount, Component reason);
 
     /**
      * Subtracts from the balance of the given player
@@ -69,7 +94,19 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response subtractBalance(String playerId, double amount);
+    public Response subtractBalance(String playerId, double amount) {
+        return subtractBalance(playerId, amount, UNKNOWN_REASON);
+    }
+
+    /**
+     * Subtracts from the balance of the given player
+     * @param playerId player
+     * @param amount amount
+     * @param reason reason for this transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response subtractBalance(String playerId, double amount, Component reason);
 
     /**
      * Resets the balance of the given player
@@ -78,6 +115,15 @@ public abstract class Economy implements EconomyWrapperPlayer {
      */
     @Sync
     public abstract Response resetBalance(String playerId);
+
+    /**
+     * Resets the balance of the given player
+     * @param playerId player
+     * @param reason reason for this transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response resetBalance(String playerId, Component reason);
 
     /**
      * Returns all the vaults for a given player
@@ -142,7 +188,17 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response deletePlayerVaults(String playerId);
+    public Response deletePlayerVaults(String playerId) {
+        return deletePlayerVaults(playerId, UNKNOWN_REASON);
+    }
+
+    /**
+     * Deletes all the given player's vaults
+     * @param playerId player
+     * @return response
+     */
+    @Sync
+    public abstract Response deletePlayerVaults(String playerId, Component reason);
 
     /**
      * Deletes all the player's vaults asynchronously
@@ -151,10 +207,19 @@ public abstract class Economy implements EconomyWrapperPlayer {
      */
     @ASync
     public CompletableFuture<Response> deletePlayerVaultsAsync(String playerId){
-        Response response = deletePlayerVaults(playerId);
+        return deletePlayerVaultsAsync(playerId, UNKNOWN_REASON);
+    }
+    /**
+     * Deletes all the player's vaults asynchronously
+     * @param playerId player
+     * @param reason reason for this transaction
+     * @return response after completion
+     */
+    @ASync
+    public CompletableFuture<Response> deletePlayerVaultsAsync(String playerId, Component reason){
+        Response response = deletePlayerVaults(playerId, reason);
         return CompletableFuture.completedFuture(response);
     }
-
     /**
      * Deletes all the vaults from the provider
      * @return response
@@ -208,7 +273,19 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response setVaultBalance(String vaultId, double amount);
+    public Response setVaultBalance(String vaultId, double amount) {
+        return setVaultBalance(vaultId, amount, UNKNOWN_REASON);
+    }
+
+    /**
+     * Sets the balance of a vault
+     * @param vaultId vault id
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response setVaultBalance(String vaultId, double amount, Component reason);
 
     /**
      * Adds to the balance of a vault
@@ -217,7 +294,19 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response addVaultBalance(String vaultId, double amount);
+    public Response addVaultBalance(String vaultId, double amount) {
+        return addVaultBalance(vaultId, amount, UNKNOWN_REASON);
+    }
+
+    /**
+     * Adds to the balance of a vault
+     * @param vaultId vault id
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response addVaultBalance(String vaultId, double amount, Component reason);
 
     /**
      * Subtracts from the balance of a vault
@@ -226,7 +315,19 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response subtractVaultBalance(String vaultId, double amount);
+    public Response subtractVaultBalance(String vaultId, double amount) {
+        return subtractVaultBalance(vaultId, amount, UNKNOWN_REASON);
+    }
+
+    /**
+     * Subtracts from the balance of a vault
+     * @param vaultId vault id
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response subtractVaultBalance(String vaultId, double amount, Component reason);
 
     /**
      * Resets the balance of a vault
@@ -235,7 +336,18 @@ public abstract class Economy implements EconomyWrapperPlayer {
      * @return response
      */
     @Sync
-    public abstract Response resetVaultBalance(String vaultId, double amount);
+    public Response resetVaultBalance(String vaultId, double amount) {
+        return resetVaultBalance(vaultId, amount, UNKNOWN_REASON);
+    }
+    /**
+     * Resets the balance of a vault
+     * @param vaultId vault id
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    public abstract Response resetVaultBalance(String vaultId, double amount, Component reason);
 
     /**
      * Returns true if the player is a member of the given vault

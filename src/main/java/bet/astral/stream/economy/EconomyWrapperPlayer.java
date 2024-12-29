@@ -4,6 +4,7 @@ import bet.astral.stream.annotations.ASync;
 import bet.astral.stream.annotations.Sync;
 import bet.astral.stream.economy.vault.Vault;
 import bet.astral.stream.utils.Player;
+import bet.astral.text.api.component.Component;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -37,6 +38,18 @@ public interface EconomyWrapperPlayer {
     }
 
     /**
+     * Sets the balance of the given player
+     * @param player player
+     * @param amount new balance
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    default Response setBalance(Player player, double amount, Component reason) {
+        return wrapper().setBalance(player.getId(), amount, reason);
+    }
+
+    /**
      * Adds to the balance of the given player
      * @param player player
      * @param amount amount
@@ -45,6 +58,17 @@ public interface EconomyWrapperPlayer {
     @Sync
     default Response addBalance(Player player, double amount) {
         return wrapper().addBalance(player.getId(), amount);
+    }
+    /**
+     * Adds to the balance of the given player
+     * @param player player
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    default Response addBalance(Player player, double amount, Component reason) {
+        return wrapper().addBalance(player.getId(), amount, reason);
     }
 
     /**
@@ -57,7 +81,17 @@ public interface EconomyWrapperPlayer {
     default Response subtractBalance(Player player, double amount) {
         return wrapper().subtractBalance(player.getId(), amount);
     }
-
+    /**
+     * Subtracts from the balance of the given player
+     * @param player player
+     * @param amount amount
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    default Response subtractBalance(Player player, double amount, Component reason) {
+        return wrapper().subtractBalance(player.getId(), amount, reason);
+    }
     /**
      * Resets the balance of the given player
      * @param player player
@@ -66,6 +100,16 @@ public interface EconomyWrapperPlayer {
     @Sync
     default Response resetBalance(Player player) {
         return wrapper().resetBalance(player.getId());
+    }
+    /**
+     * Resets the balance of the given player
+     * @param player player
+     * @param reason reason for transaction
+     * @return response
+     */
+    @Sync
+    default Response resetBalance(Player player, Component reason) {
+        return wrapper().resetBalance(player.getId(), reason);
     }
 
     /**

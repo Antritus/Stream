@@ -53,6 +53,16 @@ public class Response extends Throwable {
      * @return success
      */
     public static Response success(String reason, double before, double after){
+        return new Response(Type.SUCCESS, Component.text("Success"), Component.text(reason), before, after);
+    }
+    /**
+     * Creates a success response
+     * @param reason reason for transaction
+     * @param before balance before
+     * @param after balance after
+     * @return success
+     */
+    public static Response success(Component reason, double before, double after){
         return new Response(Type.SUCCESS, Component.text("Success"), reason, before, after);
     }
 
@@ -61,11 +71,11 @@ public class Response extends Throwable {
      * @return success
      */
     public static Response operationSuccess(){
-        return new Response(Type.SUCCESS, Component.text("Operation executed successfully!"), "Success", 0, 0);
+        return new Response(Type.SUCCESS, Component.text("Operation executed successfully!"), Component.text("Success"), 0, 0);
     }
     private final Type type;
     private final Component errorMessage;
-    private final String reason;
+    private final Component reason;
     private final double balanceBefore;
     private final double balanceAfter;
     private final double amount;
@@ -79,7 +89,7 @@ public class Response extends Throwable {
      * @param balanceAfter balance after
      */
     public Response(Type type, String errorMessage, String reason, double balanceBefore, double balanceAfter) {
-        this(type, Component.text(errorMessage), reason, balanceBefore, balanceAfter);
+        this(type, Component.text(errorMessage), Component.text(reason), balanceBefore, balanceAfter);
     }
     /**
      * Creates a new response instance
@@ -89,7 +99,7 @@ public class Response extends Throwable {
      * @param balanceBefore balance before
      * @param balanceAfter balance after
      */
-    public Response(Type type, Component errorMessage, String reason, double balanceBefore, double balanceAfter) {
+    public Response(Type type, Component errorMessage, Component reason, double balanceBefore, double balanceAfter) {
         this.type = type;
         this.errorMessage = errorMessage;
         this.reason = reason;
@@ -120,6 +130,25 @@ public class Response extends Throwable {
      */
     public Component getErrorMessage() {
         return errorMessage;
+    }
+
+    /**
+     * Returns the reason of the transaction
+     * @return reason
+     */
+    public String getReasonString() {
+        if (reason == null){
+            return null;
+        }
+        return reason.getValue();
+    }
+
+    /**
+     * Returns the reason of the transaction
+     * @return reason
+     */
+    public Component getReason() {
+        return reason;
     }
 
     /**
