@@ -3,7 +3,7 @@ package bet.astral.stream;
 import bet.astral.stream.economy.Currency;
 import bet.astral.stream.economy.CurrencyEconomy;
 import bet.astral.stream.economy.Economy;
-import bet.astral.stream.economy.EconomyHandler;
+import bet.astral.stream.economy.EconomyProvider;
 import bet.astral.stream.permission.Permission;
 import bet.astral.stream.permission.PermissionProvider;
 import bet.astral.stream.style.Style;
@@ -15,7 +15,7 @@ import bet.astral.stream.style.StyleProvider;
  * @since 1.0.0
  */
 public class Stream {
-    private static EconomyHandler economy;
+    private static EconomyProvider economy;
     private static StyleProvider style;
     private static PermissionProvider permission;
 
@@ -121,7 +121,7 @@ public class Stream {
      * @param override true, if the api should override the previous economy, else false
      * @return result
      */
-    public static RegistryResult registerEconomy(EconomyHandler economy, boolean override){
+    public static RegistryResult registerEconomy(EconomyProvider economy, boolean override){
         if (Stream.economy != null && !override){
             return RegistryResult.ALREADY_REGISTERED;
         }
