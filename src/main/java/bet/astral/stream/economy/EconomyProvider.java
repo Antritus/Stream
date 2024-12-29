@@ -5,7 +5,7 @@ package bet.astral.stream.economy;
  * @author Antritus
  * @since 1.0.0
  */
-public interface EconomyHandler {
+public interface EconomyProvider {
     /**
      * Returns the global economy
      * @return global economy

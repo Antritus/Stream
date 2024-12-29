@@ -117,9 +117,9 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = project.group
-            artifactId = project.name
-            version = project.version
+            groupId = group
+            artifactId = mod_id
+            version = version
             from components.java
         }
     }
