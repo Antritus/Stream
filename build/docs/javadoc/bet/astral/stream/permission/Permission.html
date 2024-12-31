@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../script.js"></script>
-<script type="text/javascript" src="../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -77,6 +77,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">Permission</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Permission manager of a stream</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>1.0.0</dd>
@@ -103,94 +104,132 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../utils/Group.html" title="interface in bet.astral.stream.utils">Group</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getGroups()" class="member-name-link">getGroups</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the groups of the permission manager</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../utils/Group.html" title="interface in bet.astral.stream.utils">Group</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getParentGroups(java.lang.String)" class="member-name-link">getParentGroups</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the parent groups of the given group id</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../utils/Group.html" title="interface in bet.astral.stream.utils">Group</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPlayerGroups(java.lang.String)" class="member-name-link">getPlayerGroups</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the groups which this player is a part of</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasPermission(java.lang.String,java.lang.String)" class="member-name-link">hasPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns true if the player has the given permission</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasPermission(java.lang.String,java.lang.String,boolean)" class="member-name-link">hasPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;defaultValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the player's permission value.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasPermission(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)" class="member-name-link">hasPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;defaultValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the player's permission value.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasPermissionGroup(java.lang.String,java.lang.String)" class="member-name-link">hasPermissionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns true if the group has the given permission</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasPermissionGroup(java.lang.String,java.lang.String,boolean)" class="member-name-link">hasPermissionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;defaultValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the current state of the group.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasPermissionGroup(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)" class="member-name-link">hasPermissionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;defaultValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the current state of the group.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermission(java.lang.String,java.lang.String,boolean)" class="member-name-link">setPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the setting value of a permission for a player to given state.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermission(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)" class="member-name-link">setPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;triState)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the setting value of a permission for a player to given state.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermissionGroup(java.lang.String,java.lang.String,boolean)" class="member-name-link">setPermissionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the permission value of the group to given to the given state.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermissionGroup(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)" class="member-name-link">setPermissionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;triState)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the permission value of the group to given state.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermissionIfAbsent(java.lang.String,java.lang.String,boolean)" class="member-name-link">setPermissionIfAbsent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the permission of a permission for a player if the player does not have the permission.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermissionIfAbsent(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)" class="member-name-link">setPermissionIfAbsent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the permission of a permission for a player if the player does not have the permission.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermissionIfAbsentGroup(java.lang.String,java.lang.String,boolean)" class="member-name-link">setPermissionIfAbsentGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the permission value of the group given to the given value if the permission is not found in the group's permissions</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPermissionIfAbsentGroup(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)" class="member-name-link">setPermissionIfAbsentGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the permission value of the group given to the given value if the permission is not found in the group's permissions</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#supportsAsteriskPermissions()" class="member-name-link">supportsAsteriskPermissions</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns true if permissions like "permission.*" are supported</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#supportsGroups()" class="member-name-link">supportsGroups</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns true if the permission manager supports permission groups</div>
+</div>
 </div>
 </div>
 </div>
@@ -226,12 +265,22 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="supportsAsteriskPermissions()">
 <h3>supportsAsteriskPermissions</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsAsteriskPermissions</span>()</div>
+<div class="block">Returns true if permissions like "permission.*" are supported</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if supported, else false</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="supportsGroups()">
 <h3>supportsGroups</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsGroups</span>()</div>
+<div class="block">Returns true if the permission manager supports permission groups</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if supported, else false</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -240,6 +289,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermission</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;triState)</span></div>
+<div class="block">Sets the setting value of a permission for a player to given state. NOT_SET to unset the permission</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>triState</code> - state</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -248,6 +304,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermission</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</span></div>
+<div class="block">Sets the setting value of a permission for a player to given state. To unset permission use <a href="#setPermission(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)"><code>setPermission(String, String, TriState)</code></a></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>state</code> - state, true to allow, else false to deny</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -256,6 +319,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermissionIfAbsent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;state)</span></div>
+<div class="block">Sets the permission of a permission for a player if the player does not have the permission.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>state</code> - state</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -264,6 +334,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermissionIfAbsent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</span></div>
+<div class="block">Sets the permission of a permission for a player if the player does not have the permission.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>state</code> - state, true to allow, else false to deny</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -271,6 +348,14 @@ loadScripts(document, 'script');</script>
 <h3>hasPermission</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPermission</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</span></div>
+<div class="block">Returns true if the player has the given permission</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player</dd>
+<dd><code>permission</code> - permission</dd>
+<dt>Returns:</dt>
+<dd>true, else false</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -279,6 +364,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a></span>&nbsp;<span class="element-name">hasPermission</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;defaultValue)</span></div>
+<div class="block">Returns the player's permission value. If permission value is <a href="../utils/TriState.html#NOT_SET"><code>TriState.NOT_SET</code></a>, else returns the given permission</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player</dd>
+<dd><code>permission</code> - permission</dd>
+<dt>Returns:</dt>
+<dd>permission value, else give default state</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -287,24 +380,51 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPermission</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;defaultValue)</span></div>
+<div class="block">Returns the player's permission value. If permission value is <a href="../utils/TriState.html#NOT_SET"><code>TriState.NOT_SET</code></a>, else returns the given permission</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player</dd>
+<dd><code>permission</code> - permission</dd>
+<dt>Returns:</dt>
+<dd>permission value, else give default state</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getGroups()">
 <h3>getGroups</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../utils/Group.html" title="interface in bet.astral.stream.utils">Group</a>[]</span>&nbsp;<span class="element-name">getGroups</span>()</div>
+<div class="block">Returns the groups of the permission manager</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>permission groups</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getPlayerGroups(java.lang.String)">
 <h3>getPlayerGroups</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../utils/Group.html" title="interface in bet.astral.stream.utils">Group</a>[]</span>&nbsp;<span class="element-name">getPlayerGroups</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;playerId)</span></div>
+<div class="block">Returns the groups which this player is a part of</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerId</code> - player id</dd>
+<dt>Returns:</dt>
+<dd>groups</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getParentGroups(java.lang.String)">
 <h3>getParentGroups</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../utils/Group.html" title="interface in bet.astral.stream.utils">Group</a>[]</span>&nbsp;<span class="element-name">getParentGroups</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId)</span></div>
+<div class="block">Returns the parent groups of the given group id</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dt>Returns:</dt>
+<dd>parent groups</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -313,6 +433,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermissionGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;triState)</span></div>
+<div class="block">Sets the permission value of the group to given state. To unset use <a href="../utils/TriState.html#NOT_SET"><code>TriState.NOT_SET</code></a></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>triState</code> - <a href="../utils/TriState.html#TRUE"><code>TriState.TRUE</code></a> to allow, <a href="../utils/TriState.html#FALSE"><code>TriState.FALSE</code></a> to deny, <a href="../utils/TriState.html#NOT_SET"><code>TriState.NOT_SET</code></a> to unset</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -321,6 +448,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermissionGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</span></div>
+<div class="block">Sets the permission value of the group to given to the given state. To unset use <a href="#setPermissionGroup(java.lang.String,java.lang.String,bet.astral.stream.utils.TriState)"><code>setPermissionGroup(String, String, TriState)</code></a></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>state</code> - true to allow, false to deny</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -329,6 +463,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermissionIfAbsentGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;state)</span></div>
+<div class="block">Sets the permission value of the group given to the given value if the permission is not found in the group's permissions</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>state</code> - state</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -337,6 +478,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPermissionIfAbsentGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;state)</span></div>
+<div class="block">Sets the permission value of the group given to the given value if the permission is not found in the group's permissions</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>state</code> - state</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -344,6 +492,14 @@ loadScripts(document, 'script');</script>
 <h3>hasPermissionGroup</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPermissionGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</span></div>
+<div class="block">Returns true if the group has the given permission</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dt>Returns:</dt>
+<dd>true, if the group has the given permission, else false</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -352,6 +508,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a></span>&nbsp;<span class="element-name">hasPermissionGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  <a href="../utils/TriState.html" title="enum class in bet.astral.stream.utils">TriState</a>&nbsp;defaultValue)</span></div>
+<div class="block">Returns the current state of the group. If the permission is not set on the group returns the default value</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>defaultValue</code> - default value (returned if not set)</dd>
+<dt>Returns:</dt>
+<dd>state, else default value</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -360,6 +525,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPermissionGroup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission,
  boolean&nbsp;defaultValue)</span></div>
+<div class="block">Returns the current state of the group. If the permission is not set on the group returns the default value</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>groupId</code> - group id</dd>
+<dd><code>permission</code> - permission</dd>
+<dd><code>defaultValue</code> - default value (returned if not set)</dd>
+<dt>Returns:</dt>
+<dd>state, else default value</dd>
+</dl>
 </section>
 </li>
 </ul>

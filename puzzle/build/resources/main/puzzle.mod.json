@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Stream",
   "description": "API system to provide simpler implementation of permissions, style and economy in mods/plugins",
   "authors": [
@@ -24,7 +24,7 @@
   ],
   "depends": {
     "cosmic-reach": ">=0.3.12",
-    "puzzle-loader": ">=2.1.15"
+    "puzzle-loader": ">=2.2.1"
   },
   "accessManipulator": "stream.manipulator"
 }

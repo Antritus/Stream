@@ -176,6 +176,7 @@ public abstract class Economy implements EconomyWrapperPlayer {
     public abstract Vault createVault() throws Response;
     /**
      * Creates a new vault with the economy provider with the vault builder as a helper
+     * @param vaultBuilder the vault to build of
      * @return new vault instance
      * @throws Response non success response
      */
@@ -195,6 +196,7 @@ public abstract class Economy implements EconomyWrapperPlayer {
     /**
      * Deletes all the given player's vaults
      * @param playerId player
+     * @param reason reason for deletion
      * @return response
      */
     @Sync

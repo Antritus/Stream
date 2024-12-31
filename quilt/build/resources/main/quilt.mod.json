@@ -4,7 +4,7 @@
   "quilt_loader": {
     "group": "bet.astral",
     "id": "stream",
-    "version": "1.0.0",
+    "version": "1.0.1",
 
     "intermediate_mappings":"net.fabricmc:intermediary",
 
@@ -32,7 +32,7 @@
     "depends": [
       {
         "id": "cosmicquilt",
-        "versions": ">=b6943d56e32a9488582fa51f6cc77a948a180d88"
+        "versions": ">=2.3.2"
       },
       {
         "id": "cosmicreach",
