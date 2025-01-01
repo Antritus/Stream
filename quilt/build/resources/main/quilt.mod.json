@@ -4,7 +4,7 @@
   "quilt_loader": {
     "group": "bet.astral",
     "id": "stream",
-    "version": "1.0.1",
+    "version": "1.0.2",
 
     "intermediate_mappings":"net.fabricmc:intermediary",
 

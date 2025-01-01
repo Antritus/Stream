@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "stream",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "Stream",
   "description": "API system to provide simpler implementation of permissions, style and economy in mods/plugins",
   "authors": [

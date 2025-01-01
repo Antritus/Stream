@@ -334,22 +334,20 @@ public abstract class Economy implements EconomyWrapperPlayer {
     /**
      * Resets the balance of a vault
      * @param vaultId vault id
-     * @param amount amount
      * @return response
      */
     @Sync
-    public Response resetVaultBalance(String vaultId, double amount) {
-        return resetVaultBalance(vaultId, amount, UNKNOWN_REASON);
+    public Response resetVaultBalance(String vaultId) {
+        return resetVaultBalance(vaultId, UNKNOWN_REASON);
     }
     /**
      * Resets the balance of a vault
      * @param vaultId vault id
-     * @param amount amount
      * @param reason reason for transaction
      * @return response
      */
     @Sync
-    public abstract Response resetVaultBalance(String vaultId, double amount, Component reason);
+    public abstract Response resetVaultBalance(String vaultId, Component reason);
 
     /**
      * Returns true if the player is a member of the given vault

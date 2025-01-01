@@ -2,7 +2,6 @@ plugins {
     id "cosmicloom"
 }
 
-
 loom {
     accessWidenerPath = file("src/main/resources/${mod_id}.accesswidener")
 }

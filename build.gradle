@@ -1,15 +1,10 @@
 plugins {
-    id 'java'
+    id "java-library"
     id "io.github.pacifistmc.forgix" version "1.2.9"
     id "cosmicloom" apply false
     id "jigsaw" apply false
     id "com.github.johnrengelman.shadow" apply false
     id "maven-publish"
-}
-
-java {
-    withSourcesJar()
-    withJavadocJar()
 }
 
 forgix {
@@ -26,6 +21,15 @@ forgix {
         projectName = "puzzle"
         jarLocation = "build/libs/puzzle-${project.version}-merged-bundle.jar"
     }
+}
+java {
+    withJavadocJar()
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+
 }
 
 subprojects {
@@ -80,11 +84,21 @@ subprojects {
     publishing {
         publications {
             maven(MavenPublication) {
-                groupId = project.group
-                artifactId = project.name
-                version = project.version
+                groupId = "com.github.antritus"
+                version = version
+                artifactId = "stream-"+project.name
                 from components.java
             }
+        }
+    }
+}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = "com.github.antritus"
+            artifactId = "stream"
+            version = version
+            from components.java
         }
     }
 }
@@ -105,22 +119,9 @@ tasks.register('cleanAll') {
     dependsOn rootProject.tasks.clean
 }
 
-java {
-    withSourcesJar()
-    withJavadocJar()
 
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = group
-            artifactId = mod_id
-            version = version
-            from components.java
-        }
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
 }

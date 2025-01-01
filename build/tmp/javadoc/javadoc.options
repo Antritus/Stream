@@ -1,9 +1,10 @@
 -classpath 'C:\\Users\\Admin\\Documents\\CosmicReach\\Stream\\build\\classes\\java\\main;C:\\Users\\Admin\\Documents\\CosmicReach\\Stream\\build\\resources\\main'
 -d 'C:\\Users\\Admin\\Documents\\CosmicReach\\Stream\\build\\docs\\javadoc'
--doctitle 'stream 1.0.1 API'
+-doctitle 'stream 1.0.2 API'
+-html5 
 -notimestamp 
 -quiet 
--windowtitle 'stream 1.0.1 API'
+-windowtitle 'stream 1.0.2 API'
 'C:\\Users\\Admin\\Documents\\CosmicReach\\Stream\\src\\main\\java\\bet\\astral\\stream\\annotations\\ASync.java'
 'C:\\Users\\Admin\\Documents\\CosmicReach\\Stream\\src\\main\\java\\bet\\astral\\stream\\annotations\\Sync.java'
 'C:\\Users\\Admin\\Documents\\CosmicReach\\Stream\\src\\main\\java\\bet\\astral\\stream\\economy\\Currency.java'

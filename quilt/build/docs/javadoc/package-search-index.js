@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"bet.astral.stream.quilt"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"bet.astral.stream.quilt"},{"l":"bet.astral.stream.quilt.mixins"}];updateSearchResults();

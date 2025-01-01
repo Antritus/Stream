@@ -44,7 +44,16 @@ public class Response extends Throwable {
     public static Response failure(Component failure, double balance){
         return new Response(Type.FAILURE, failure, null, balance, balance);
     }
-
+    /**
+     * Creates a failure response
+     * @param failure failure cause
+     * @param balance balance
+     * @param change change
+     * @return failure response
+     */
+    public static Response failure(Component failure, double balance, double change){
+        return new Response(Type.FAILURE, failure, null, balance, balance, change);
+    }
     /**
      * Creates a success response
      * @param reason reason for transaction
@@ -107,7 +116,23 @@ public class Response extends Throwable {
         this.balanceAfter = balanceAfter;
         this.amount = balanceBefore-balanceAfter;
     }
-
+    /**
+     * Creates a new response instance
+     * @param type type of response
+     * @param errorMessage error message
+     * @param reason reason for transaction
+     * @param balanceBefore balance before
+     * @param balanceAfter balance after
+     * @param change amount of the balance
+     */
+    public Response(Type type, Component errorMessage, Component reason, double balanceBefore, double balanceAfter, double change) {
+        this.type = type;
+        this.errorMessage = errorMessage;
+        this.reason = reason;
+        this.balanceBefore = balanceBefore;
+        this.balanceAfter = balanceAfter;
+        this.amount = change;
+    }
     /**
      * Returns the response type
      * @return type

@@ -1,27 +1,15 @@
 package bet.astral.stream.economy;
 
 /**
- * Creates a new currency economy
+ * Currency economy interface. Cast this class to {@link Economy}
  * @author Antritus
  * @since 1.0.0
  */
-public abstract class CurrencyEconomy extends Economy {
-    protected final Currency currency;
-
-    /**
-     * Creates a new currency economy instance
-     * @param currency currency to use
-     */
-    protected CurrencyEconomy(Currency currency) {
-        this.currency = currency;
-    }
-
+public interface CurrencyEconomy {
     /**
      * Returns the currency used for this economy
      * @return currency
      */
-    public Currency getCurrency() {
-        return currency;
-    }
-
+    Currency getCurrency();
 }
+
