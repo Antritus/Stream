@@ -4,8 +4,9 @@
   "package": "bet.astral.stream.quilt.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "bet.astral.stream.puzzle.mixins.IdentifierMixin",
-    "bet.astral.stream.puzzle.mixins.PlayerMixin"
+    "IdentifierMixin",
+    "PlayerMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
   ],

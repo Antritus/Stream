@@ -26,7 +26,7 @@
     },
 
     "entrypoints": {
-      "init": "${quilt_sources_entry_point}"
+      "server": "${quilt_sources_entry_point}"
     },
 
     "depends": [
