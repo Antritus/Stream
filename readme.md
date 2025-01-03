@@ -12,7 +12,7 @@
 	
 	
 	dependencies {
-	        implementation 'com.github.Antritus:Stream:1.0.6'
+	        implementation 'com.github.Antritus:Stream:1.0.7'
 	}
 ```
 
