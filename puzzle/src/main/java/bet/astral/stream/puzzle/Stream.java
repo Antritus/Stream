@@ -10,9 +10,15 @@ import com.github.puzzle.core.loader.provider.mod.entrypoint.impls.ModInitialize
  * @since 1.0.0
  */
 public class Stream extends StreamProvider implements ModInitializer {
+    public static boolean accepts = true;
     @Override
     public void onInit() {
         provider = this;
+    }
+
+    @Override
+    public boolean acceptsNewRegistries() {
+        return accepts;
     }
 
     @Override

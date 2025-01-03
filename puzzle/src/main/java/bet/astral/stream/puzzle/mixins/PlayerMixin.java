@@ -1,21 +1,26 @@
 package bet.astral.stream.puzzle.mixins;
 
-import finalforeach.cosmicreach.accounts.Account;
-import finalforeach.cosmicreach.entities.player.Player;
+import bet.astral.stream.utils.Player;
+import bet.astral.text.api.component.Component;
+import finalforeach.cosmicreach.entities.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 /**
- * Mixins the player interface to the server player
+ * @since 1.0.6
  * @author Antritus
- * @since 1.0.0
  */
-@Mixin(Player.class)
+@Mixin(finalforeach.cosmicreach.entities.player.Player.class)
 public abstract class PlayerMixin implements bet.astral.stream.utils.Player {
-    @Shadow public abstract Account getAccount();
+    @Shadow private Entity entity;
+
+    @Override
+    public void sendMessage(Component component) {
+        ((Player) entity).sendMessage(component);
+    }
 
     @Override
     public String getId() {
-        return getAccount().getUniqueId();
+        return ((Player) entity).getId();
     }
 }

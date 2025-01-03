@@ -6,6 +6,7 @@ import bet.astral.stream.economy.Economy;
 import bet.astral.stream.economy.EconomyProvider;
 import bet.astral.stream.permission.Permission;
 import bet.astral.stream.permission.PermissionProvider;
+import bet.astral.stream.provider.StreamProvider;
 import bet.astral.stream.style.Style;
 import bet.astral.stream.style.StyleProvider;
 
@@ -15,9 +16,22 @@ import bet.astral.stream.style.StyleProvider;
  * @since 1.0.0
  */
 public class Stream {
+    private static StreamProvider provider;
     private static EconomyProvider economy;
     private static StyleProvider style;
     private static PermissionProvider permission;
+
+    /**
+     * Internal method. This is not meant for developers.
+     * @param provider provider
+     * @throws IllegalAccessException if a provider for the api is registered
+     */
+    public static void provide(StreamProvider provider) throws IllegalAccessException{
+        if (Stream.provider != null){
+            throw new IllegalAccessException("Cannot change the provider of the Stream API after it is provided!");
+        }
+        Stream.provider = provider;
+    }
 
     /**
      * Returns the global economy of the server
@@ -122,6 +136,14 @@ public class Stream {
      * @return result
      */
     public static RegistryResult registerEconomy(EconomyProvider economy, boolean override){
+        // Make sure the API is usable and the registry allows new registrations
+        if (provider == null){
+            return RegistryResult.PROVIDER_NOT_REGISTERED;
+        } else if (!provider.acceptsNewRegistries()){
+            return RegistryResult.REGISTRY_CLOSED;
+        }
+
+
         if (Stream.economy != null && !override){
             return RegistryResult.ALREADY_REGISTERED;
         }
@@ -138,6 +160,14 @@ public class Stream {
      * @return result
      */
     public static RegistryResult registerStyle(StyleProvider style, boolean override){
+        // Make sure the API is usable and the registry allows new registrations
+        if (provider == null){
+            return RegistryResult.PROVIDER_NOT_REGISTERED;
+        } else if (!provider.acceptsNewRegistries()){
+            return RegistryResult.REGISTRY_CLOSED;
+        }
+
+
         if (Stream.style != null && !override){
             return RegistryResult.ALREADY_REGISTERED;
         }
@@ -154,6 +184,14 @@ public class Stream {
      * @return result
      */
     public static RegistryResult registerPermission(PermissionProvider permission, boolean override){
+        // Make sure the API is usable and the registry allows new registrations
+        if (provider == null){
+            return RegistryResult.PROVIDER_NOT_REGISTERED;
+        } else if (!provider.acceptsNewRegistries()){
+            return RegistryResult.REGISTRY_CLOSED;
+        }
+
+
         if (Stream.permission != null && !override){
             return RegistryResult.ALREADY_REGISTERED;
         }
@@ -176,6 +214,16 @@ public class Stream {
          * The server already has a provider for the given type and it was not overridden
          */
         ALREADY_REGISTERED,
+
+        /**
+         * The server is no longer accepting new registries to the server
+         */
+        REGISTRY_CLOSED,
+
+        /**
+         * The server does not have a Stream API provider!
+         */
+        PROVIDER_NOT_REGISTERED
     }
 
 }

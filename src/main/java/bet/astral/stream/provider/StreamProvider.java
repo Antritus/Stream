@@ -12,6 +12,12 @@ public abstract class StreamProvider {
     protected static StreamProvider provider;
 
     /**
+     * Returns true if the server accepts new registrations
+     * @return true if accepts, else false
+     */
+    public abstract boolean acceptsNewRegistries();
+
+    /**
      * Creates a new identifier instance
      * @param namespace namespace
      * @param value value

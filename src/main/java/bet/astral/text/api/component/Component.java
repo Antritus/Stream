@@ -41,6 +41,18 @@ public interface Component {
      * @return component
      */
     static Component throwable(Throwable throwable){
-        return throwable::getMessage;
+        return StreamProvider.createText(throwable.getMessage());
     }
+
+    /**
+     * Returns true if the component is language
+     * @return is language
+     */
+    boolean isLanguage();
+
+    /**
+     * Returns true if the component is text
+     * @return is text
+     */
+    boolean isText();
 }

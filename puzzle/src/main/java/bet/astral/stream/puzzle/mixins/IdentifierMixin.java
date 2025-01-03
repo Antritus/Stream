@@ -5,9 +5,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 /**
- * Mixins the identifier interface to the server identifier
- * @author Antritus
  * @since 1.0.0
+ * @author Antritus
  */
 @Mixin(Identifier.class)
 public class IdentifierMixin implements bet.astral.stream.utils.Identifier {

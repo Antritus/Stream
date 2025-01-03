@@ -4,6 +4,10 @@ import finalforeach.cosmicreach.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
+/**
+ * @since 1.0.0
+ * @author Antritus
+ */
 @Mixin(Identifier.class)
 public class IdentifierMixin implements bet.astral.stream.utils.Identifier {
     @Shadow protected String namespace;
