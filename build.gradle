@@ -37,6 +37,7 @@ subprojects {
     apply plugin: "maven-publish"
 
     repositories {
+        gradlePluginPortal()
         maven {
             name "JitPack"
             url "https://jitpack.io"

@@ -1,5 +1,6 @@
 buildscript() {
     repositories {
+        gradlePluginPortal()
         maven {
             name "JitPack"
             url "https://jitpack.io"
