@@ -65,7 +65,5 @@ public abstract class StreamProvider {
      * @param key key
      * @return component
      */
-    public Component componentLang(String key) {
-        return componentText(key);
-    }
+    public abstract Component componentLang(String key);
 }
