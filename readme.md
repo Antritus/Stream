@@ -1,6 +1,20 @@
 # Stream
 [![](https://jitpack.io/v/Antritus/Stream.svg)](https://jitpack.io/#Antritus/Stream)
 
+```groovy
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+	}
+	
+	
+	dependencies {
+	        implementation 'com.github.Antritus:Stream:1.0.6'
+	}
+```
 
 ## For developers wanting to use the API
 ```java
